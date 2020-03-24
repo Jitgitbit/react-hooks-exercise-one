@@ -5,6 +5,7 @@ export default function NewSongForm({addSong}) {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(title)
+    addSong(title);
   }
   return (
     <form onSubmit={handleSubmit}>

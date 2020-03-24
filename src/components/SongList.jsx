@@ -8,8 +8,8 @@ export default function SongList() {
     {title: 'memory gospel', id: 2},
     {title: 'this wild darkness', id: 3}
   ])
-  const addSong = () => {
-    setSongs([...songs, {title:'new song', id: uuid() }])
+  const addSong = (title) => {
+    setSongs([...songs, {title: title, id: uuid() }])
   }
   return (
     <div>
@@ -18,7 +18,7 @@ export default function SongList() {
           return (<li key={song.id}>{song.title}</li>);
         })}
       </ul>
-      <NewSongForm/>
+      <NewSongForm addSong={addSong}/>
     </div>
   )
 }
