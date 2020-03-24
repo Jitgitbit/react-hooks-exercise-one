@@ -10,7 +10,7 @@ export default function SongList() {
     <div>
       <ul>
         {songs.map(song => {
-          return (<li>{song.title}</li>)
+          return (<li key={song.id}>{song.title}</li>)
         })}
       </ul>
     </div>
