@@ -8,6 +8,7 @@ export default function SongList() {
     {title: 'memory gospel', id: 2},
     {title: 'this wild darkness', id: 3}
   ])
+  const [age, setAge] = useState(20)
   const addSong = (title) => {
     setSongs([...songs, {title, id: uuid() }])         //=========>> ES6 --> title: title is the same as title  !!!
   }
@@ -23,6 +24,7 @@ export default function SongList() {
         })}
       </ul>
       <NewSongForm addSong={addSong}/>
+      <button onClick={()=> {setAge(age + 1)}}>Add 1 to age: {age}</button>
     </div>
   )
 }
