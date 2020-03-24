@@ -12,7 +12,8 @@ export default function SongList() {
     setSongs([...songs, {title, id: uuid() }])         //=========>> ES6 --> title: title is the same as title  !!!
   }
   useEffect(() => {
-    console.log('useEffect hook ran:', songs);         //=========>> useEffect runs everytime on rendering and/or when any state is being updated !!!
+    console.log('useEffect hook ran:', songs);         //=========>> useEffect runs everytime on rendering and/or when any state/data inside the 
+                                                       //=========>> component is being updated !!!
   })
   return (
     <div>
