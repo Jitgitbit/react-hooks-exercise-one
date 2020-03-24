@@ -9,7 +9,7 @@ export default function SongList() {
     {title: 'this wild darkness', id: 3}
   ])
   const addSong = (title) => {
-    setSongs([...songs, {title: title, id: uuid() }])
+    setSongs([...songs, {title, id: uuid() }])         // ES6 --> title: title is the same as title  !!!
   }
   return (
     <div>
