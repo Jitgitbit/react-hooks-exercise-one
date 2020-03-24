@@ -9,8 +9,9 @@ export default function SongList() {
   return (
     <div>
       <ul>
-        <li>this wild darkness</li>
-        <li>memory gospel</li>
+        {songs.map(song => {
+          return (<li>{song.title}</li>)
+        })}
       </ul>
     </div>
   )
