@@ -6,6 +6,7 @@ export default function NewSongForm({addSong}) {
     e.preventDefault();
     console.log(title)
     addSong(title);
+    setTitle('');          // AutoClearing the input-field !!!
   }
   return (
     <form onSubmit={handleSubmit}>
