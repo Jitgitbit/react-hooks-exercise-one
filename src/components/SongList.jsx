@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import uuid from 'uuid/v1';
 import NewSongForm from './NewSongForm';
 
@@ -9,8 +9,11 @@ export default function SongList() {
     {title: 'this wild darkness', id: 3}
   ])
   const addSong = (title) => {
-    setSongs([...songs, {title, id: uuid() }])         // ES6 --> title: title is the same as title  !!!
+    setSongs([...songs, {title, id: uuid() }])         //=========>> ES6 --> title: title is the same as title  !!!
   }
+  useEffect(() => {
+    console.log('useEffect hook ran:', songs);         //=========>> useEffect runs everytime on rendering and/or when any state is being updated !!!
+  })
   return (
     <div>
       <ul>
