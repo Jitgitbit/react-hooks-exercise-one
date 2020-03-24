@@ -8,7 +8,7 @@ export default function SongList() {
     {title: 'this wild darkness', id: 3}
   ])
   const addSong = () => {
-    setSongs([...songs, {title:'new song', id:4}])
+    setSongs([...songs, {title:'new song', id: uuid() }])
   }
   return (
     <div>
