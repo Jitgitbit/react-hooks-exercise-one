@@ -1,10 +1,15 @@
-import React from 'react'
+import React, {useState} from 'react'
 
-export default function NewSongForm() {
+export default function NewSongForm({addSong}) {
+  const [title, setTitle] = useState('')
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(title)
+  }
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <label>Song name:</label>
-      <input type='text' required/>
+      <input type='text' value={title } required onChange={(e)=> setTitle(e.target.value)}/>
       <input type='submit' value='add song'/>
     </form>
   )
