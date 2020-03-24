@@ -13,13 +13,17 @@ export default function SongList() {
     setSongs([...songs, {title, id: uuid() }])         //=========>> ES6 --> title: title is the same as title  !!!
   }
   useEffect(() => {
-    console.log('useEffect hook ran for any:', songs);         //=========>> useEffect runs everytime on rendering and/or when ANY state/data inside the 
+    console.log('useEffect hook ran for ANY:', songs);         //=========>> useEffect runs everytime on rendering and/or when ANY state/data inside the 
                                                        //=========>> component is being updated !!!
   })
   useEffect(() => {
-    console.log('useEffect hook ran for songs only:', songs);         //=========>> useEffect runs everytime on rendering and/or when THE SPECIFIED
+    console.log('useEffect hook ran for SONGS only:', songs);         //=========>> useEffect runs everytime on rendering and/or when THE SPECIFIED
                                                                //=========>>  state/data inside the component is being updated !!!
   }, [songs] )                                         //=====>> this data !
+  useEffect(() => {
+    console.log('useEffect hook ran for AGE only:', age);         //=========>> useEffect runs everytime on rendering and/or when THE SPECIFIED
+                                                               //=========>>  state/data inside the component is being updated !!!
+  }, [age] )                                         //=====>> this data !
   return (
     <div>
       <ul>
